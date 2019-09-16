@@ -52,7 +52,7 @@ namespace SuDoKu
         }
         public int GetSquareWidth()
         {
-            int Width = CSVArray[1];
+            int Width = CSVArray[2];
             return Width;
         }
         public void SetSquareWidth(int Width)
@@ -62,7 +62,7 @@ namespace SuDoKu
 
         public int GetSquareHeight()
         {
-            int Height = CSVArray[2];
+            int Height = CSVArray[1];
             return Height;
         }
         public void SetSquareHeight(int Height)
