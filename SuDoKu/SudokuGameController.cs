@@ -61,189 +61,199 @@ namespace SuDoKu
             view.Clear();
 
             //Output the sudoku game(4*4)
-            view.DisplayBoard(game.ToPrettyString()); // test: ISerialize - ToPrettyString
-            game.ToCSV();
-            //test: ISerialize - SetCell
-             Console.WriteLine("test: ISerialize - SetCell: ");
-             inputData = view.GetCellChangeData("Enter value, cellIndex.");
-             game.SetCell(inputData[0], inputData[1]); 
-             Array.Clear(inputData, 0, inputData.Length);
+             view.DisplayBoard(game.ToPrettyString()); // test: ISerialize - ToPrettyString
+             game.ToCSV();
+             //test: ISerialize - SetCell
+              Console.WriteLine("test: ISerialize - SetCell: ");
+              inputData = view.GetCellChangeData("Enter value, cellIndex.");
+              game.SetCell(inputData[0], inputData[1]); 
+              Array.Clear(inputData, 0, inputData.Length);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
+
+              //test: ISerialize - GetCell
+              Console.WriteLine("test: ISerialize - GetCell: ");
+              inputData = view.GetCellChangeData("Enter cellIndex.");
+              view.DisplayBoard("The cell value is " + game.GetCell(inputData[0]).ToString()); 
+              Array.Clear(inputData, 0, inputData.Length);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
+
+              //test: ISerialize - ToCSV
+              Console.WriteLine("test: ISerialize - ToCSV: ");
+              view.DisplayBoard(game.ToCSV());
              view.DisplayBoard(game.ToPrettyString());
              view.DisplayBoard("---------------------------");
+             Console.ReadLine();
 
-             //test: ISerialize - GetCell
-             Console.WriteLine("test: ISerialize - GetCell: ");
-             inputData = view.GetCellChangeData("Enter cellIndex.");
-             view.DisplayBoard("The cell value is " + game.GetCell(inputData[0]).ToString()); 
-             Array.Clear(inputData, 0, inputData.Length);
+             //test: test: IGame - Restart
+
+             Console.WriteLine("Press any key to restart.--This is a test.");
+             Console.ReadLine();
+             game.Restart();
              view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
 
-             //test: ISerialize - ToCSV
-             Console.WriteLine("test: ISerialize - ToCSV: ");
-             view.DisplayBoard(game.ToCSV());
-            view.DisplayBoard(game.ToPrettyString());
-            view.DisplayBoard("---------------------------");
-            Console.ReadLine();
+             //test the function of ISet.
 
-            //test: test: IGame - Restart
+             //test: ISet - SetByRow
+             Console.WriteLine("test: ISet - SetByRow: ");
+              inputData = view.GetCellChangeData("Enter row, col, value.");
+              game.SetByRow(inputData[2], inputData[0], inputData[1]);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
 
-            Console.WriteLine("Press any key to restart.--This is a test.");
-            Console.ReadLine();
-            game.Restart();
-            view.DisplayBoard(game.ToPrettyString());
+              //test: ISet - SetByColumn
+              Console.WriteLine("test: ISet - SetByColumn: ");
+              inputData = view.GetCellChangeData("Enter row, col, value.");
+              game.SetByRow(inputData[2], inputData[0], inputData[1]);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
 
-            //test the function of ISet.
-
-            //test: ISet - SetByRow
-            Console.WriteLine("test: ISet - SetByRow: ");
-             inputData = view.GetCellChangeData("Enter row, col, value.");
-             game.SetByRow(inputData[2], inputData[0], inputData[1]);
-             view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
-
-             //test: ISet - SetByColumn
-             Console.WriteLine("test: ISet - SetByColumn: ");
-             inputData = view.GetCellChangeData("Enter row, col, value.");
-             game.SetByRow(inputData[2], inputData[0], inputData[1]);
-             view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
-
-             //test: ISet - SetBySquare
-             Console.WriteLine("test: ISet - SetBySquare: ");
-             inputData = view.GetCellChangeData("Enter squareIndex, positionIndex, value.");
-             game.SetBySquare(inputData[2], inputData[0], inputData[1]);
-             view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
+              //test: ISet - SetBySquare
+              Console.WriteLine("test: ISet - SetBySquare: ");
+              inputData = view.GetCellChangeData("Enter squareIndex, positionIndex, value.");
+              game.SetBySquare(inputData[2], inputData[0], inputData[1]);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
 
 
-             //test the function of IGet.
+              //test the function of IGet.
 
-             //test: IGet - GetByColumn
-             Console.WriteLine("test: IGet - GetByColumn: ");
-             inputData = view.GetCellChangeData("Enter row, col");
-             view.DisplayBoard("The cell value is " + game.GetByColumn(inputData[1], inputData[0]).ToString());
-             Array.Clear(inputData, 0, inputData.Length);
-             view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
-
-
-             //test: IGet - GetByRow
-             Console.WriteLine("test: IGet - GetByRow: ");
-             inputData = view.GetCellChangeData("Enter row, col");
-             view.DisplayBoard("The cell value is " + game.GetByRow(inputData[0], inputData[1]).ToString());
-             Array.Clear(inputData, 0, inputData.Length);
-             view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
+              //test: IGet - GetByColumn
+              Console.WriteLine("test: IGet - GetByColumn: ");
+              inputData = view.GetCellChangeData("Enter row, col");
+              view.DisplayBoard("The cell value is " + game.GetByColumn(inputData[1], inputData[0]).ToString());
+              Array.Clear(inputData, 0, inputData.Length);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
 
 
-             //test: IGet - GetBySquare
-             Console.WriteLine("test: IGet - GetBySquare: ");
-             inputData = view.GetCellChangeData("Enter squareIndex, positionIndex");
-             view.DisplayBoard("The cell value is " + game.GetBySquare(inputData[0], inputData[1]).ToString());
-             Array.Clear(inputData, 0, inputData.Length);
-             view.DisplayBoard(game.ToPrettyString());
-             view.DisplayBoard("---------------------------");
+              //test: IGet - GetByRow
+              Console.WriteLine("test: IGet - GetByRow: ");
+              inputData = view.GetCellChangeData("Enter row, col");
+              view.DisplayBoard("The cell value is " + game.GetByRow(inputData[0], inputData[1]).ToString());
+              Array.Clear(inputData, 0, inputData.Length);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
+
+
+              //test: IGet - GetBySquare
+              Console.WriteLine("test: IGet - GetBySquare: ");
+              inputData = view.GetCellChangeData("Enter squareIndex, positionIndex");
+              view.DisplayBoard("The cell value is " + game.GetBySquare(inputData[0], inputData[1]).ToString());
+              Array.Clear(inputData, 0, inputData.Length);
+              view.DisplayBoard(game.ToPrettyString());
+              view.DisplayBoard("---------------------------");
 
 
 
 
-             //test the function of RowVaild
+              //test the function of RowVaild
 
-             Console.WriteLine("test: SudokuFeature - RowVaild: ");
+              Console.WriteLine("test: SudokuFeature - RowVaild: ");
 
-             for (int i = 0; i < maxValue; i++)
+              for (int i = 0; i < maxValue; i++)
+              {
+                  bool isRowValid = game.RowVaild(i);
+
+                  if (isRowValid)
+                  {
+                      Console.WriteLine("Row " + i + " is valid.");
+                  }
+                  else
+                  {
+                      Console.WriteLine("Row " + i + " is NOT valid.");
+                  }
+              }
+
+              //test the function of ColumnVaild
+              Console.WriteLine("test: SudokuFeature - ColumnVaild: ");
+              for (int i = 0; i < maxValue; i++)
+              {
+                  bool isColumnValid = game.ColumnVaild(i);
+
+                  if (isColumnValid)
+                  {
+                      Console.WriteLine("Column " + i + " is valid.");
+                  }
+                  else
+                  {
+                      Console.WriteLine("Column " + i + " is NOT valid.");
+                  }
+              }
+
+              //test the function of SquareVaild
+
+              Console.WriteLine("test: SudokuFeature - SquareVaild: ");
+              for (int i = 0; i < maxValue; i++)
+              {
+                  bool isSquareValid = game.SquareVaild(i);
+
+                  if (isSquareValid)
+                  {
+                      Console.WriteLine("Square " + i + " is valid.");
+                  }
+                  else
+                  {
+                      Console.WriteLine("Square " + i + " is NOT valid.");
+                  }
+              }
+
+
+             //test the function of VaildValueByRow
+
+             vaildValue = "";
+             Console.WriteLine("Enter the cell index to check the Row vaild value.");
+
+             List<int> RowPossible = game.VaildValueByRow(Int16.Parse(Console.ReadLine()));
+
+             foreach (int aNumber in RowPossible)
              {
-                 bool isRowValid = game.RowVaild(i);
-
-                 if (isRowValid)
-                 {
-                     Console.WriteLine("Row " + i + " is valid.");
-                 }
-                 else
-                 {
-                     Console.WriteLine("Row " + i + " is NOT valid.");
-                 }
+                 vaildValue += aNumber + " ";
              }
 
-             //test the function of ColumnVaild
-             Console.WriteLine("test: SudokuFeature - ColumnVaild: ");
-             for (int i = 0; i < maxValue; i++)
-             {
-                 bool isColumnValid = game.ColumnVaild(i);
+             Console.Write("Row vaild value list: < " + vaildValue +">");
+             Console.Write("\n");
 
-                 if (isColumnValid)
-                 {
-                     Console.WriteLine("Column " + i + " is valid.");
-                 }
-                 else
-                 {
-                     Console.WriteLine("Column " + i + " is NOT valid.");
-                 }
+             //test the function of VaildValueByColumn
+
+             vaildValue = "";
+             Console.WriteLine("Enter the cell index to check the Column vaild value.");
+
+             List<int> ConlumnPossible = game.VaildValueByColumn(Int16.Parse(Console.ReadLine()));
+             foreach (int aNumber in ConlumnPossible)
+             {
+                 vaildValue += aNumber + " ";
              }
 
-             //test the function of SquareVaild
+             Console.Write("Conlumn vaild value list: < " + vaildValue + ">");
+             Console.Write("\n");
 
-             Console.WriteLine("test: SudokuFeature - SquareVaild: ");
-             for (int i = 0; i < maxValue; i++)
+             //test the function of VaildValueBySquare
+
+             vaildValue = "";
+             Console.WriteLine("Enter the cell index to check the Square vaild value.");
+             List<int> SquarePossible = game.VaildValueBySquare(Int16.Parse(Console.ReadLine()));
+             foreach (int aNumber in SquarePossible)
              {
-                 bool isSquareValid = game.SquareVaild(i);
-
-                 if (isSquareValid)
-                 {
-                     Console.WriteLine("Square " + i + " is valid.");
-                 }
-                 else
-                 {
-                     Console.WriteLine("Square " + i + " is NOT valid.");
-                 }
+                 vaildValue += aNumber + " ";
              }
 
+             Console.Write("Square vaild value list: < " + vaildValue + ">");
+             Console.Write("\n");
 
-            //test the function of VaildValueByRow
+            //test the function of VaildValue
 
             vaildValue = "";
-            Console.WriteLine("Enter the cell index to check the Row vaild value.");
-  
-            List<int> RowPossible = game.VaildValueByRow(Int16.Parse(Console.ReadLine()));
-
-            foreach (int aNumber in RowPossible)
+            Console.WriteLine("Enter the cell index to check the vaild value.");
+            List<int> Possible = game.VaildValueByCell(Int16.Parse(Console.ReadLine()));
+            foreach (int aNumber in Possible)
             {
                 vaildValue += aNumber + " ";
             }
 
-            Console.Write("Row vaild value list: < " + vaildValue +">");
+            Console.Write("Vaild value list: < " + vaildValue + ">");
             Console.Write("\n");
-
-            //test the function of VaildValueByColumn
-
-            vaildValue = "";
-            Console.WriteLine("Enter the cell index to check the Column vaild value.");
-
-            List<int> ConlumnPossible = game.VaildValueByColumn(Int16.Parse(Console.ReadLine()));
-            foreach (int aNumber in ConlumnPossible)
-            {
-                vaildValue += aNumber + " ";
-            }
-
-            Console.Write("Conlumn vaild value list: < " + vaildValue + ">");
-            Console.Write("\n");
-
-            //test the function of VaildValueBySquare
-
-            vaildValue = "";
-            Console.WriteLine("Enter the cell index to check the Square vaild value.");
-            List<int> SquarePossible = game.VaildValueBySquare(Int16.Parse(Console.ReadLine()));
-            foreach (int aNumber in SquarePossible)
-            {
-                vaildValue += aNumber + " ";
-            }
-
-            Console.Write("Square vaild value list: < " + vaildValue + ">");
-            Console.Write("\n");
-
-
-
             view.Finish();
         }
     }

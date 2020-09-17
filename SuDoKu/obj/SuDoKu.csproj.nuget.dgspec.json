@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\SuDoKu.csproj": {}
+    "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\SuDoKu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\SuDoKu.csproj": {
+    "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\SuDoKu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\SuDoKu.csproj",
+        "projectUniqueName": "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\SuDoKu.csproj",
         "projectName": "SuDoKu",
-        "projectPath": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\SuDoKu.csproj",
-        "packagesPath": "C:\\Users\\box\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\obj\\",
+        "projectPath": "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\SuDoKu.csproj",
+        "packagesPath": "C:\\Users\\Li\\.nuget\\packages\\",
+        "outputPath": "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\box\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Li\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

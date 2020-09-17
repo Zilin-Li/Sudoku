@@ -197,5 +197,71 @@ namespace SuDoKuTests
             CollectionAssert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void VaildValueByCell_test1()
+        {
+            //4*4,
+            var expected = new List<int>() { 1, 2, 3, 4 };
+
+            SudokuGame igame = new SudokuGame();
+            igame.maxValue = 4;
+            igame.squareHeight = 2;
+            igame.squareWidth = 2;
+            igame.sudokuArray = new int[16];
+
+
+            igame.sudokuArray[10] = 2;
+            //igame.sudokuArray[11] = 3;
+            igame.sudokuArray[14] = 1;
+            igame.sudokuArray[15] = 4;
+
+            List<int> actual = igame.VaildValueByCell(0);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void VaildValueByCell_test2()
+        {
+            //4*4,
+            var expected = new List<int>() { 3, 4 };
+
+            SudokuGame igame = new SudokuGame();
+            igame.maxValue = 4;
+            igame.squareHeight = 2;
+            igame.squareWidth = 2;
+            igame.sudokuArray = new int[16];
+
+
+            igame.sudokuArray[10] = 2;
+            //igame.sudokuArray[11] = 3;
+            igame.sudokuArray[14] = 1;
+            igame.sudokuArray[15] = 4;
+
+            List<int> actual = igame.VaildValueByCell(6);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void VaildValueByCell_test3()
+        {
+            //4*4,
+            var expected = new List<int>() { 3 };
+
+            SudokuGame igame = new SudokuGame();
+            igame.maxValue = 4;
+            igame.squareHeight = 2;
+            igame.squareWidth = 2;
+            igame.sudokuArray = new int[16];
+
+
+            igame.sudokuArray[10] = 2;
+            //igame.sudokuArray[11] = 3;
+            igame.sudokuArray[14] = 1;
+            igame.sudokuArray[15] = 4;
+
+            List<int> actual = igame.VaildValueByCell(11);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
     }
 }

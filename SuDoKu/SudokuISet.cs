@@ -7,16 +7,10 @@ namespace SuDoKu
      public partial class SudokuGame : ISet
     {
         public int arrayIndex;
-        public int[] sudokuArray, CSVArray;
-        public int maxValue;
-        public int squareHeight;
-        public int squareWidth;
-        public string CSVFile;
-        public string PrettyString;
-        public int cellValue;
-
 
         //Realize interface ISet.
+
+        // Set a value by column.
         public void SetByColumn(int value, int columnIndex, int rowIndex)
         {
             
@@ -31,6 +25,8 @@ namespace SuDoKu
             }
  
         }
+
+        // Set a value by row.
         public void SetByRow(int value, int rowIndex, int columnIndex)
         {
             
@@ -44,6 +40,8 @@ namespace SuDoKu
                 Console.WriteLine("Out of range!");
             }
         }
+
+        // Set a value by square.
         public void SetBySquare(int value, int squareIndex, int positionIndex)
         {
             int colInd;

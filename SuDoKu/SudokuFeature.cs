@@ -91,7 +91,6 @@ namespace SuDoKu
         }
 
         //feature 4: list vaild value by Row.
-
         public List<int> VaildValueByRow(int gridIndex)
         {
 
@@ -123,7 +122,6 @@ namespace SuDoKu
         }
 
         //feature 5: list vaild value by Column.
-
         public List<int> VaildValueByColumn(int gridIndex)
         {
 
@@ -155,7 +153,6 @@ namespace SuDoKu
         }
 
         //feature 6: list vaild value by Square.
-
         public List<int> VaildValueBySquare(int gridIndex)
         {
 
@@ -167,12 +164,12 @@ namespace SuDoKu
                 squareVaildValue.Add(i);
             }
 
-           // get the squareIndex   *****************************incorrect
-            int columnIndex = gridIndex % maxValue;
-            int rowIndex = gridIndex / maxValue;
-            int squareIndex = (rowIndex / squareHeight) * squareHeight + columnIndex % squareWidth;
+            // get the squareIndex   *****************************incorrect
+            //int columnIndex = gridIndex % maxValue;
+            //int rowIndex = gridIndex / maxValue;
+            // squareIndex = (rowIndex / squareHeight) * squareHeight + columnIndex % squareWidth;
 
-
+            int squareIndex = 0;
             //use below method to get squreIndex *********************************************************
             for(int i=0; i< maxValue; i++)
             {
@@ -182,10 +179,6 @@ namespace SuDoKu
                         squareIndex = i / squareHeight * squareHeight + j / squareWidth;
                 }
             }
-
-
-
-
             //step2: use get GetBySquare() to get each value of the square
             for (int a = 0; a < maxValue; a++)
             {
@@ -201,6 +194,38 @@ namespace SuDoKu
 
             }
             return squareVaildValue;
+        }
+
+        //feature 7: Input a cell index, return all vaild value.
+        public List<int> VaildValueByCell(int gridIndex)
+        {
+            List<int> VaildValue = new List<int>();
+            
+            for (int i = 1; i <= maxValue; i++)
+            {
+                VaildValue.Add(i);
+            }
+            List<int> RowVaildValue = VaildValueByRow(gridIndex);
+            List<int> ColumnVaildValue =VaildValueByColumn(gridIndex);
+            List<int> SquareVaildValue =VaildValueBySquare(gridIndex);
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                if(!RowVaildValue.Contains(i))
+                {
+                    VaildValue.Remove(i);
+                }
+                if (!ColumnVaildValue.Contains(i))
+                {
+                    VaildValue.Remove(i);
+                }
+                if (!SquareVaildValue.Contains(i))
+                {
+                    VaildValue.Remove(i);
+                }
+                 
+            }
+            return VaildValue;
         }
 
     }

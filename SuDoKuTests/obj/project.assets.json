@@ -5839,23 +5839,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\box\\.nuget\\packages\\": {},
+    "C:\\Users\\Li\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKuTests\\SuDoKuTests.csproj",
+      "projectUniqueName": "C:\\ProjectsLynn\\SuDoKu\\SuDoKuTests\\SuDoKuTests.csproj",
       "projectName": "SuDoKuTests",
-      "projectPath": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKuTests\\SuDoKuTests.csproj",
-      "packagesPath": "C:\\Users\\box\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKuTests\\obj\\",
+      "projectPath": "C:\\ProjectsLynn\\SuDoKu\\SuDoKuTests\\SuDoKuTests.csproj",
+      "packagesPath": "C:\\Users\\Li\\.nuget\\packages\\",
+      "outputPath": "C:\\ProjectsLynn\\SuDoKu\\SuDoKuTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\box\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Li\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5868,8 +5868,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\SuDoKu.csproj": {
-              "projectPath": "C:\\Users\\box\\source\\repos\\SuDoKu\\SuDoKu\\SuDoKu.csproj"
+            "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\SuDoKu.csproj": {
+              "projectPath": "C:\\ProjectsLynn\\SuDoKu\\SuDoKu\\SuDoKu.csproj"
             }
           }
         }

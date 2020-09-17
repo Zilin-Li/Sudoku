@@ -7,7 +7,13 @@ namespace SuDoKu
 {
     public partial class SudokuGame : ISerialize
     {
+        public string CSVFile;
+        public string PrettyString;
+        public int cellValue;
+
         //Realize interface ISerialize
+
+        //Load the game value from a CSV file
         public void FromCSV(string csv)
         {
 
@@ -34,6 +40,7 @@ namespace SuDoKu
             return saveFile;
         }
 
+        //Set a value by cell
         public void SetCell(int value, int gridIndex)
         {
             if(value>=0 && value<= maxValue && gridIndex >=0 && gridIndex < maxValue * maxValue)
@@ -46,6 +53,8 @@ namespace SuDoKu
             }
             
         }
+
+        //Get a value by cell
         public int GetCell(int gridIndex)
         {
             if(gridIndex>=0 && gridIndex< maxValue * maxValue)
@@ -61,6 +70,7 @@ namespace SuDoKu
             return cellValue;
         }
 
+        // To dispaly a game board
         public string ToPrettyString()
         {
             PrettyString = "";
@@ -99,7 +109,6 @@ namespace SuDoKu
                     }
                     PrettyString += "\n";
                 }
-
             }
             PrettyString = PrettyString.Replace('0', '*');
             return PrettyString;

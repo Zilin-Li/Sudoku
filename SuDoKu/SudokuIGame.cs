@@ -6,11 +6,18 @@ namespace SuDoKu
 {
     public partial class SudokuGame :IGame
     {
+        public int maxValue;
+        public int squareHeight;
+        public int squareWidth;
+        public int[] sudokuArray, CSVArray;
+
         //Realize interface IGame.
         public void SetMaxValue(int maximum)
         {
             maxValue = maximum;
         }
+
+        //Get max value from CSVArray
         public int GetMaxValue()
         {
             int Value = CSVArray[0];
@@ -39,7 +46,7 @@ namespace SuDoKu
             return CSVArray;
         }
 
-
+        //Get the initial game value, and input to the program 
         public void Set(int[] cellValues)
         {
             sudokuArray = new int[maxValue*maxValue];
@@ -50,26 +57,34 @@ namespace SuDoKu
             }
 
         }
+
+        //Get SquareWidth from CSVArray
         public int GetSquareWidth()
         {
             int Width = CSVArray[2];
             return Width;
         }
+
+        //Set SquareWidth to the program
         public void SetSquareWidth(int Width)
         {
             squareWidth = Width;
         }
 
+        //Get SquareHeight from CSVArray
         public int GetSquareHeight()
         {
             int Height = CSVArray[1];
             return Height;
         }
+
+        //Set SquareHeight to the program
         public void SetSquareHeight(int Height)
         {
             squareHeight = Height;
         }
 
+        //Restart the game.
         public void Restart()
         {
             this.Set(this.ToArray());
